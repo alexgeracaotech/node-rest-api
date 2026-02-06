@@ -1,0 +1,7 @@
+module.exports = [{
+  id: 1,
+  name: 'Pizza'
+}, {
+  id: 2,
+  name: 'Soda'
+}];
