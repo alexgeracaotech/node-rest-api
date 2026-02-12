@@ -1,20 +1,17 @@
 const http = require('node:http');
+
 const routes = require('./routes');
+const errors = require('./errors');
 
 http.createServer(function (request, response) {
-  
-  const route = routes.find(function (r) {
-    return request.url === r.endpoint;
+  const router = routes.find(function (route) {
+    return request.url === route.endpoint;
   });
 
-  if (route) {
-    route.handler(response);
+  if (router) {
+    router.handler(response);
     return;
   }
 
-  response.writeHead(
-    200,
-    {'content-type': 'text/html; charset=utf-8'}
-  );
-  response.end('<h1>Hello Client!</h1>');
+  errors.notFound(response);
 }).listen(3000);
