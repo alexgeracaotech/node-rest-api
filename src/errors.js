@@ -1,4 +1,4 @@
-module.exports = {
+const errors = {
   notFound(response) {
     response.writeHead(
       404,
@@ -7,3 +7,5 @@ module.exports = {
     response.end(JSON.stringify({message: 'Not found!'}));
   }
 }
+
+export default errors;

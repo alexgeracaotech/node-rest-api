@@ -1,7 +1,7 @@
-const http = require('node:http');
+import http from 'node:http';
 
-const routes = require('./routes');
-const errors = require('./errors');
+import routes from './routes.js';
+import errors from './errors.js';
 
 http.createServer(function (request, response) {
   const router = routes.find(function (route) {

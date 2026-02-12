@@ -1,6 +1,6 @@
-const users = require('../mocks/users');
+import users from '../mocks/users.js';
 
-module.exports = {
+const UserController = {
   index(response) {
     response.writeHead(
       200,
@@ -9,3 +9,5 @@ module.exports = {
     response.end(JSON.stringify(users));
   }
 }
+
+export default UserController;

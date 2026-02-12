@@ -1,10 +1,12 @@
-const UserController = require('./controllers/UserController');
-const ProductController = require('./controllers/ProductController');
+import UserController from './controllers/UserController.js';
+import ProductController from './controllers/ProductController.js';
 
-module.exports = [{
+const routes = [{
   endpoint: '/users',
   handler: UserController.index
 }, {
   endpoint: '/products',
   handler: ProductController.index
 }];
+
+export default routes;

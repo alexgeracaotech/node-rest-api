@@ -1,6 +1,6 @@
-const products = require('../mocks/products');
+import products from '../mocks/products.js';
 
-module.exports = {
+const ProductController = {
   index(response) {
     response.writeHead(
       200,
@@ -9,3 +9,5 @@ module.exports = {
     response.end(JSON.stringify(products));
   }
 }
+
+export default ProductController;
