@@ -1,7 +1,7 @@
 const users = require('../mocks/users');
 
 module.exports = {
-  getUsers(response) {
+  index(response) {
     response.writeHead(
       200,
       {'content-type': 'application/json'}
